@@ -1,0 +1,60 @@
+.pg-interna
+	.main
+		.container 
+			align-items: stretch
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: space-between
+			padding-bottom: 55px
+			>.content 
+				flex: 1 
+				+mq(640px, max)
+					flex: 0 0 auto 
+					width: 100%
+				&:not(:only-child)
+					padding-right: 15px
+					+mq(640px, max)
+						padding-bottom: 30px
+						padding-right: 0
+			.content 
+				.attachment
+					margin-bottom: 30px
+					img 
+						display: block
+						width: 100%
+				.title 
+					+rem('font-size', 26px)
+					font-weight: bold 
+					margin-bottom: 20px
+					&.-inner-session
+						margin-top: 60px
+						text-align: center 
+				p 
+					+rem(('font-size':16px,'line-height':22px))
+				.featured-content
+					align-items: stretch 
+					@extend .flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					.title 
+						flex: 0 0 auto 
+						width: 100% 
+					div 
+						flex: 1
+						width: 50%
+						+mq(1024px, max)
+							flex: 0 0 auto 
+							width: 100%
+						&:first-of-type
+							padding-right: 15px
+							+mq(1024px, max)
+								padding-right: 0
+						&:last-of-type
+							padding-right: 15px
+							+mq(1024px, max)
+								padding-top: 15px
+								padding-left: 0
+						img 
+							display: block
+							max-width: 100%
+							width: 100%

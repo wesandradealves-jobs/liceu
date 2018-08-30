@@ -1,0 +1,45 @@
+.sidebar
+	flex: 1
+	max-width: 318px
+	+mq(814px, max)
+		max-width: 256px
+		+mq(640px, max)
+			flex: 0 0 auto
+			max-width: 100%
+			padding-left: 0 
+			width: 100%
+	padding-left: 15px
+	>div 
+		display: block 
+		img 
+			display: block 
+			max-width: 100%
+		&:not(:last-child)
+			margin-bottom: 30px
+	form 
+		background-color: darken(#fafafa, 5%)
+		padding: 15px
+		div,span,label
+			display: block
+			width: 100%
+			input[type="text"],
+			input[type="submit"],
+			input[type="email"],
+			textarea,
+			select
+				background-color: darken(#fafafa, 10%)
+				border: 1px #fafafa solid
+				color: gray
+				display: block
+				+rem('font-size', 14px)
+				margin-bottom: 6px
+				overflow: hidden
+				padding: 6px 
+				resize: none  
+				width: 100%
+		textarea 
+			height: 90px
+		label 
+			margin-bottom: 6px
+		.btn 
+			width: 100%
