@@ -181,6 +181,7 @@ section
         +mq(568px, max)
             padding-bottom: 25px
     .section-title
+        +rem('font-size', 60px)
         padding-top: 50px
         padding-bottom: 50px 
         +mq(568px, max)
@@ -280,7 +281,28 @@ form
         +rem('font-size', 14px) 
         padding: 12px 
         width: 100%
-
+    select
+        display: block
+        width: 100%
+        +border(10px)
+        box-shadow: inset 0px 0px 20px -7px black
+        height: 40px
+.pg-title
+    font-size: 1.625rem
+    font-weight: 700
+    margin-bottom: 20px
+    text-align: center
+.more-link
+    padding: 9px 17px
+    background-color: $purple
+    font-size: .75rem
+    color: white
+    +border(8px)
+    display: block
+    width: 130px
+    text-align: center
+    text-transform: uppercase
+    font-weight: 700
 .related 
     align-items: stretch 
     @extend .flex
@@ -420,3 +442,8 @@ div.wpcf7-response-output
     text-align: center
     font-size: 13px
     +rem('font-size', 13px)
+
+.galeria .owl-nav [class*=owl-]
+    background: none!important
+    color: black!important
+    +rem('font-size', 22px !important)

@@ -33,6 +33,7 @@
     "sass-rem": "^2.0.1"
   },
   "devDependencies": {
+    "lightbox2": "^2.10.0",
     "owl-carousel": "^1.0.0",
     "owl.carousel": "^2.3.4",
     "video-js": "^0.7.0",

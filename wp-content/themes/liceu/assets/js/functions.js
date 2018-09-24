@@ -62,6 +62,23 @@ function soLetras(v){
     return v.replace(/\d/g,"") //Remove tudo o que não é Letra
 }
 $(document).ready(function () {
+	$('.galeria').owlCarousel({
+	    dots:false,
+	    loop:true,
+	    margin:30,
+	    nav:true,
+		responsive : {
+		    0 : {
+		    	items: 1
+		    },
+		    768 : {
+		    	items: 3
+		    },
+		    1024 : {
+		    	items: 6
+		    }
+		}	    
+	});	
 	$('.owl-carousel').owlCarousel({
 	    dots:false,
 	    items:3,
@@ -84,6 +101,10 @@ $(document).ready(function () {
 			$(this).attr("href", "http://localhost/liceu/#"+href.split("#").pop());
 		}
 	});
+    lightbox.option({
+      'resizeDuration': 200,
+      'wrapAround': true
+    });
 });
       
       

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header(); global $post; ?>
 
 	<div class="container">
 
@@ -20,8 +20,30 @@
 
 		    	<h2 class="title"><?php echo get_the_title(); ?></h2>
 
-		    	<?php the_content(); ?>
+				<div><?php the_content(); ?></div>
+		    
+				<div>
+				<?php if( have_rows('imagem') ): ?>
 
+					<h2 class="title">Confira a Galeria</h2>
+
+					<ul class="galeria owl-carousel owl-theme">
+
+					<?php while( have_rows('imagem') ): the_row(); 
+
+						$imagem_da_galeria = get_sub_field('imagem_da_galeria');
+					?>
+
+						<li class="item">
+							<a href="<?php echo $imagem_da_galeria; ?>" data-lightbox="<?php echo $post_slug = $post->post_name ?>"><img width="100%" src="<?php echo $imagem_da_galeria; ?>" alt="<?php echo get_the_title(); ?>"></a>
+						</li>
+
+					<?php endwhile; ?>
+
+					</ul>
+
+				<?php endif; ?>
+				</div>
 		    </div>
 
 		    <?php endwhile; endif; ?>	
