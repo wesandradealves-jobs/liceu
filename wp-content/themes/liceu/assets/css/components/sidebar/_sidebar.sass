@@ -1,0 +1,28 @@
+.sidebar
+	border-left: 1px lightgray solid 
+	flex: 0 0 auto 
+	width: 318px
+	padding-left: 15px
+	+mq(814px, max)
+		max-width: 256px
+		+mq(640px, max)
+			border-left: 0
+			flex: 0 0 auto
+			max-width: 100%
+			padding-left: 0 
+			width: 100%
+	padding-left: 15px
+	>div 
+		display: block 
+		img 
+			display: block 
+			max-width: 100%
+		&:not(:last-child)
+			margin-bottom: 30px
+	.widget-title 
+		color: $purple
+		+rem('font-size', 24px)
+		font-weight: 300 
+		margin-bottom: 15px
+		text-transform: uppercase 
+		text-align: center

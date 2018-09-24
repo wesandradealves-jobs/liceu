@@ -1,0 +1,220 @@
+.destaques
+	&:not(.-mini-grid)
+		.container
+			>* 
+				+mq(414px, max)
+					flex: 0 0 auto 
+					width: 100%
+			>.destaque 
+				+mq(414px, max)
+					padding-right: 0 
+					padding-bottom: 30px
+				height: 1010px
+				+mq(812px, max)
+					height: 400px
+					+mq(737px, max)
+						height: 275px
+				.destaque-inner 
+					padding: 0 47px 47px
+					+mq(812px, max)
+						padding: 0 20px 20px
+					>.title 
+						+rem('font-size', 60px)	
+						+mq(812px, max)
+							+rem('font-size', 30px)
+							+mq(737px, max)
+								+rem('font-size', 18px)
+			>ul 
+				flex-flow: column wrap 
+				+mq(414px, max)
+					display: none
+				.destaque
+					padding-left: 15px
+					+mq(414px, max)
+						padding-left: 0
+					&:not(:last-child)
+						padding-bottom: 30px
+					.destaque-inner
+						+mq(812px, max)
+							padding-bottom: 20px
+							+mq(414px, max)
+								padding-top: 80px
+								height: auto 
+						.title
+							+rem('font-size', 40px)
+							+mq(812px, max)
+								+rem('font-size', 20px)
+.turmas
+	.container 
+		.destaque
+			height: 470px
+			+mq(812px, max)
+				height: 215px
+				+mq(737px, max)
+					height: 155px
+			.destaque-inner 
+				>div 
+					opacity: 0
+					top: 30px
+					+mq(812px, max)
+						opacity: 1 
+						top: 0
+					position: relative
+					+transition(500ms)
+					z-index: 2
+					.title 
+						+rem('font-size', 20px)
+						+mq(737px, max)
+							+rem('font-size', 16px)
+						text-shadow: 0px 0px black
+				&::after 
+					background-color: rgba(0,0,0,.7)
+					content: ""
+					display: block
+					height: 100%
+					left: 0 
+					opacity: 0 
+					+mq(812px, max)
+						opacity: 1
+					position: absolute 
+					+transition(500ms)
+					top: 0
+					width: 100%
+					z-index: 1
+				&:hover 
+					* 
+						opacity: 1
+						top: 0
+					&::after 
+						opacity: 1
+		.owl-carousel 
+			.owl-nav 
+				align-items: center 
+				@extend .flex 
+				flex-flow: row wrap 
+				+rem('font-size', 34px)
+				justify-content: flex-end
+				position: absolute 
+				right: 0
+				top: -105px
+				+mq(568px, max)
+					top: -75px
+				&:first-child 
+					margin-right: 30px
+				&:last-child
+					margin-left: 0
+				[class*=owl-]:hover
+					background: transparent 
+					color: initial
+
+.dicas-pe-diller
+	.videos
+		align-items: stretch 
+		@extend .flex 
+		flex-flow: row wrap 
+		+mq(414px, max)
+			flex-flow: column wrap
+		justify-content: space-between
+		>* 
+			flex: 1 
+		&-navigation
+			background-color: $lightgray
+			max-width: 830px  
+			padding: 15px 30px
+			+mq(812px, max)
+				order: 2
+				max-height: 365px
+				overflow: hidden 
+				+mq(737px, max)
+					max-height: 190px
+		&-stage 
+			padding-left: 30px
+			+mq(414px, max)
+				order: 1
+				padding-left: 0
+			.embed-container
+				background: url(https://i.imgur.com/jlru0UZ.gif) center center no-repeat white
+				height: 100%
+				min-height: 547px 
+				+mq(812px, max)
+					min-height: initial 
+					max-height: 365px
+					+mq(414px, max)
+						height: 265px
+				padding: 0
+				iframe
+					position: relative
+					z-index: 2
+		&-navigation 
+			>ul  
+				>li
+					&.-active,
+					&:hover 
+						background-color: darken($lightgray, 5%)
+					cursor: pointer
+					align-items: stretch 
+					@extend .flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					margin-left: -15px 
+					margin-right: -15px
+					padding: 15px
+					&:not(:last-child)
+						margin-bottom: 15px
+					>* 
+						flex: 1
+					>.video-thumbnail
+						background-size: cover 
+						background-position: center center 
+						background-repeat: no-repeat 
+						min-height: 130px  
+						max-width: 180px
+					>div 
+						padding-left: 15px
+						>.title 
+							+rem('font-size', 16px)
+							>small 
+								color: $orange 
+								display: block 
+								margin-top: 15px
+
+.cadastre-se
+	background-size: cover 
+	background-position: center bottom 
+	background-repeat: no-repeat
+	background-attachment: fixed
+	height: 460px
+	+mq(568px, max)
+		height: auto 
+	&::after 
+		background-color: transparentize($blue, .3)
+		content: ""
+		display: block
+		height: 100%
+		left: 0  
+		position: absolute
+		top: 0 
+		width: 100%
+		z-index: 1
+	.container 
+		align-items: center 
+		color: white
+		@extend .flex 
+		flex-flow: column wrap 
+		justify-content: center 
+		height: 100%
+		position: relative
+		z-index: 2
+		.section-title
+			+rem('font-size', 60px)
+			+mq(568px, max)
+				+rem('font-size', 30px)
+			&+div
+			    border: 6px rgba(255,255,255,.5) solid
+			    padding: 50px 30px 
+			    text-align: center 
+			    p 
+			    	span 
+			    		+rem('font-size', 22px)
+		>* 
+			z-index: 1

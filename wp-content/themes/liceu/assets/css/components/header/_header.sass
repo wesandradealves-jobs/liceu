@@ -1,0 +1,65 @@
+.header
+	background-color: white
+	+shadow(0px, 0px, 20px, -10px, black)
+	display: block 
+	left: 0
+	position: fixed
+	top: 0
+	width: 100%
+	z-index: 2
+	>.container 
+		align-items: center
+		@extend .flex 
+		flex-flow: row wrap 
+		justify-content: space-between
+		+mq(1366px, max)
+			justify-content: flex-end
+		position: relative 
+		padding-top: 40px
+		padding-bottom: 40px
+		>.social-networks
+			+mq(1366px, max)
+				flex: 0 0 auto 
+				order: 2
+				padding-right: 40px
+				+mq(414px, max)
+					display: none
+		>.navigation
+			+mq(1367px, min)
+				+transition(500ms)
+			+mq(1366px, max)
+				flex: 0 0 auto 
+				order: 3
+				padding-left: 0
+				+mq(414px, max)
+					transform: scale(.7)
+			padding-left: 200px
+			>ul 
+				>li 
+					&:last-child
+						display: none 
+					+mq(1366px, max)
+						&:last-child 
+							display: flex
+						&:not(:last-child)
+							display: none 
+		>.logo 
+			left: 0
+			position: absolute
+			+mq(414px, max)
+				left: calc(50% - 155px/2)
+			top: 0 
+			img 
+				transition: max-width 500ms ease
+				max-width: 200px
+				+mq(812px, max)
+					max-width: 135px
+				width: 100%
+	&.-scrolled 
+		+mq(1367px, min)
+			>.container 
+				>.navigation
+					padding-left: 140px
+				>.logo 
+					img 
+						max-width: 135px
