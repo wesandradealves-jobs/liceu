@@ -1,0 +1,88 @@
+.pg-interna
+	&.pg-cadastro,
+	&.pg-contato
+		.pg-title 
+			margin-bottom: 25px
+			text-align: center
+	.main
+		.container 
+			align-items: stretch
+			@extend .flex 
+			flex-flow: row wrap 
+			justify-content: space-between
+			padding-bottom: 55px
+			>.content 
+				flex: 1 
+				+mq(640px, max)
+					flex: 0 0 auto 
+					width: 100%
+				&:not(:only-child)
+					padding-right: 15px
+					+mq(640px, max)
+						padding-bottom: 30px
+						padding-right: 0
+			.content 
+				.attachment
+					margin-bottom: 30px
+					img 
+						display: block
+						width: 100%
+				.title 
+					+rem('font-size', 26px)
+					font-weight: bold 
+					margin-bottom: 20px
+					&.-inner-session
+						margin-top: 60px
+						text-align: center 
+				p 
+					+rem(('font-size':16px,'line-height':22px))
+				.featured-content
+					align-items: stretch 
+					@extend .flex 
+					flex-flow: row wrap 
+					justify-content: space-between
+					.title 
+						flex: 0 0 auto 
+						width: 100% 
+					div 
+						flex: 1
+						width: 50%
+						+mq(1024px, max)
+							flex: 0 0 auto 
+							width: 100%
+						&:first-of-type
+							padding-right: 15px
+							+mq(1024px, max)
+								padding-right: 0
+						&:last-of-type
+							padding-right: 15px
+							+mq(1024px, max)
+								padding-top: 15px
+								padding-left: 0
+						img 
+							display: block
+							max-width: 100%
+							width: 100%
+
+#register
+    padding: 9px 17px
+    margin-left: auto
+    background-color: #2c1d58
+    font-size: .75rem
+    color: #fff
+    -webkit-border-radius: 8px
+    border-radius: 8px
+    display: block
+    width: 130px
+    text-align: center
+    text-transform: uppercase
+    font-weight: bold
+.register-session
+	.container
+		padding-bottom: 15px!important
+		margin-top: -20px
+
+#wpcf7-f77-o1,
+#wpcf7-f142-o1 
+    max-width: 736px
+    margin: 0 auto

@@ -1,0 +1,422 @@
+textarea,
+input
+    &[placeholder]
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-moz-placeholder
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &::-webkit-input-placeholder
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+    &:-ms-input-placeholder 
+        color: gray
+        font-weight: 300
+        opacity: 1
+        text-overflow: ellipsis
+
+img 
+    max-width: 100%
+
+.blur 
+    .header,
+    .main, 
+    .footer 
+        filter: blur(5px)
+
+.flex  
+    display: -webkit-box
+    display: -ms-flexbox
+    display: -webkit-flex
+    display: flex    
+
+.container
+    display: block
+    max-width: 1680px
+    margin: 0 auto
+    opacity: relative
+    padding-left: 15px
+    padding-right: 15px
+
+#wrap
+    background-color: #fafafa
+    min-height: 100vh
+    padding-top: 160px
+    +mq(812px, max)
+        padding-top: 265px
+    overflow: hidden
+    .main 
+        z-index: 1
+
+.logo 
+    img,svg
+        height: auto
+        max-width: 100%
+
+.pattern 
+    &::before 
+        background: url(assets/imgs/pattern.png) center center repeat transparent
+        content: ""
+        display: block 
+        height: 3px 
+        width: 100%
+
+.destaques
+    .container
+        align-items: stretch
+        @extend .flex
+        flex-flow: row wrap 
+        justify-content: space-between
+        >.destaque 
+            padding-right: 15px
+        >ul 
+            @extend .flex 
+            justify-content: space-between
+            .destaque 
+                flex: 1
+        >* 
+            flex: 1
+    &.-mini-grid
+        &.-reverse 
+            .container 
+                flex-flow: row-reverse wrap
+                +mq(414px, max)
+                    flex-flow: column wrap 
+                >.destaque 
+                    padding-right: 0
+                    padding-left: 30px
+                    +mq(414px, max)
+                        padding-left: 0 
+        .container
+            +mq(414px, max)
+                flex-flow: column wrap
+            padding-left: 0 
+            padding-right: 0
+            >.destaque 
+                height: 350px
+                +mq(812px, max)
+                    height: 250px
+                    +mq(737px, max)
+                        height: 165px
+                padding-right: 30px
+                +mq(414px, max)
+                    padding-right: 0
+            >ul 
+                +mq(414px, max)
+                    padding-top: 30px
+                .destaque
+                    align-items: flex-start 
+                    @extend .flex 
+                    flex-flow: column wrap 
+                    justify-content: space-between
+                    .destaque-inner 
+                        flex: 1
+                        +mq(414px, max)
+                            height: 90px
+                            padding: 0 0  
+                    &-content 
+                        flex: 0 0 auto
+                        padding-top: 15px
+                        >.title 
+                            +rem('font-size', 26px)
+                            +mq(812px, max)
+                                +rem('font-size', 18px)
+                            font-weight: bold 
+                            >small 
+                                color: $orange 
+                                display: block 
+                                font-weight: 300
+                                +rem('font-size', 11px)
+                                margin-top: 6px
+                    &:first-child 
+                        padding-right: 15px 
+                    &:last-child 
+                        padding-left: 15px
+
+.destaque
+    overflow: hidden
+    position: relative 
+    &-inner 
+        align-items: flex-start
+        background-position: center center 
+        background-size: cover
+        background-repeat: no-repeat 
+        &[onclick]
+            cursor: pointer   
+        @extend .flex 
+        flex-flow: column wrap 
+        justify-content: flex-end   
+        padding: 0 15px 35px
+        height: 100%
+        width: 100% 
+        >div 
+            width: 100%
+            >.category               
+                background-color: $purple
+                color: white  
+                display: inline-block 
+                +rem('font-size', 15px)
+                +mq(737px, max)
+                    margin-bottom: 8px
+                    +rem('font-size', 11px)
+                margin-bottom: 15px
+                padding: 6px 10px
+                text-transform: uppercase
+            >.title 
+                color: white
+                display: block 
+                font-weight: bold 
+                text-shadow: 0px 2px black
+                width: 100% 
+
+section 
+    >.container 
+        padding-bottom: 50px
+        +mq(568px, max)
+            padding-bottom: 25px
+    .section-title
+        padding-top: 50px
+        padding-bottom: 50px 
+        +mq(568px, max)
+            padding-top: 25px
+            padding-bottom: 25px
+    &.pattern
+        >.container 
+            padidng-bottom: 30px
+            +mq(568px, max)
+                padding-bottom: 20px  
+        .section-title
+            padding-top: 30px
+            padding-bottom: 30px
+            +mq(568px, max)
+                padding-bottom: 20px 
+                padding-top: 20px
+
+.embed-container 
+    overflow: hidden
+    padding-top: 56.25%
+    position: relative
+    iframe, object, embed 
+       border: 0
+       height: 100%
+       left: 0
+       position: absolute
+       top: 0
+       width: 100%
+       z-index: 2
+
+.lds-dual-ring 
+    display: block 
+    left: calc(50% - 46px/2)
+    position: absolute 
+    top: calc(50% - 46px/2)
+    width: 64px
+    height: 64px
+    z-index: 1
+    &:after 
+        content: " "
+        display: block
+        width: 46px
+        height: 46px
+        margin: 1px
+        border-radius: 50%
+        border: 5px solid $orange
+        border-color: $orange transparent $orange transparent
+        animation: lds-dual-ring 1.2s linear infinite
+
+.btn 
+    +border(8px)
+    display: block 
+    font-weight: bold 
+    +rem('font-size', 16px)
+    padding: 12px 
+    text-transform: uppercase 
+    text-align: center
+    &.btn-1 
+        background-color: darken(#fafafa, 10%)
+        color: gray 
+
+.ads
+    display: block 
+    margin-top: 30px
+    overflow: hidden 
+    width: 100%
+    a,img 
+        display: inherit 
+        width: inherit 
+
+form 
+    textarea,
+    input:not([type="radio"]):not([type="checkbox"]), 
+    label,
+        display: block
+        margin-bottom: 15px
+        span 
+            display: inherit 
+            margin-top: 8px
+    textarea, 
+    input:not([type="submit"]):not([type="radio"]):not([type="checkbox"])
+        background-color: white
+        +border(8px) 
+        box-shadow: inset 0px 3px 23px -11px black
+        border: 1px lightgray solid   
+        display: block 
+        padding: 10px 
+        width: 100%
+    textarea 
+        height: 90px
+        overflow: hidden 
+        resize: none
+    input[type="submit"]
+        background-color: $purple 
+        color: white 
+        display: block
+        +rem('font-size', 14px) 
+        padding: 12px 
+        width: 100%
+
+.related 
+    align-items: stretch 
+    @extend .flex
+    .thumbnail 
+        background-size: cover 
+        background-repeat: no-repeat 
+        background-position: center center 
+        display: block 
+        margin-bottom: 8px
+        padding: 0 0 75%
+    &.row 
+        display: block
+        margin-bottom: -15px
+        .thumbnail 
+            padding: 0 0 35% 
+            +mq(737px, max)
+                margin-bottom: 15px
+                padding: 0 0 100%
+        >* 
+            padding-bottom: 15px
+            >div 
+                @extend .flex 
+                flex-flow: row wrap 
+                justify-content: space-between
+                background-color: whitesmoke
+                padding: 15px
+                >* 
+                    flex: 0 0 auto 
+                    width: 60%
+                    +mq(737px, max)
+                        width: 100%
+                    &:last-child 
+                        flex: 1 
+                        padding-left: 15px
+                        +mq(737px, max)
+                            padding-left: 0
+                        width: auto 
+    &.column
+        flex-flow: row wrap 
+        margin: 0 -7.5px
+        +mq(737px, max)
+            margin: 0 auto -15px
+        justify-content: space-between
+        >*
+            >div 
+                background-color: whitesmoke
+                height: 100% 
+                padding: 15px
+            flex: 1
+            &:only-child 
+                flex: 0 0 33.333%
+                +mq(737px, max)
+                    flex: 0 0 auto 
+                    width: 100%
+            padding: 0 7.5px
+            +mq(737px, max)
+                padding: 0 0 15px
+        p 
+            +rem('font-size', 10px)
+// .related
+//     align-items: stretch 
+//     @extend .flex 
+//     justify-content: space-between
+//     img 
+//         display: block
+//         max-width: 100% 
+//         width: 100%
+//     >* 
+//         flex: 1
+//     h3 
+//         +rem('font-size', 22px)
+//         font-weight: bold 
+//         margin-bottom: 15px
+//     &.-vertical
+//         flex-flow: column wrap  
+//         >* 
+//             align-items: stretch
+//             @extend .flex 
+//             flex-flow: row wrap 
+//             height: 100%
+//             justify-content: space-between
+//             >* 
+//                 flex: 1
+//                 height: 100%
+//                 &:not(:last-child)
+//                     margin-bottom: 30px
+//                 &:first-child
+//                     padding-right: 15px 
+//                 &:last-child 
+//                     padding-right: 15px
+//     &.-horizontal
+//         flex-flow: row wrap 
+//         margin-right: -30px
+//         +mq(690px, max)
+//             margin-right: 0
+//         &.-full 
+//             >* 
+//                 height: 100%
+//         >* 
+//             &.thumbnail-only 
+//                 > * 
+//                     > * 
+//                         background-position: center center 
+//                         background-size: cover
+//                         background-repeat: no-repeat   
+//                         height: 350px
+//                         width: 100%
+//                         display: block
+//             justify-content: flex-start 
+//             flex: 0 0 auto 
+//             padding-bottom: 30px
+//             width: 33.333%
+//             +mq(1024px, max)
+//                 width: 50%
+//                 +mq(690px, max)
+//                     padding-right: 0
+//                     width: 100%
+//             padding-right: 30px
+//             >*
+//                 background-color: $lightgray 
+//                 @extend .flex 
+//                 flex-flow: column wrap
+//                 min-height: 350px
+//                 justify-content: flex-start
+//                 padding: 15px
+//             h3
+//                 margin-top: 15px
+
+[onclick]
+    cursor: pointer
+
+div.wpcf7-response-output
+    border: 0
+    margin: 0
+    text-align: center
+    padding: 15px 10px 0
+    text-align: center
+    font-size: 13px
+    +rem('font-size', 13px)

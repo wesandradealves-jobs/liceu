@@ -1,0 +1,57 @@
+.footer
+	background-color: $matte 
+	color: white 
+	.container
+		align-items: center 
+		@extend .flex
+		flex-flow: row rwap 
+		+mq(812px, max)
+			flex-flow: column wrap 
+		justify-content: space-between
+		padding-top: 30px
+		padding-bottom: 30px
+		+mq(568px, max)
+			text-align: center
+		>div 
+			align-items: flex-start 
+			@extend .flex 
+			flex-flow: row wrap 
+			+mq(737px, max)
+				align-items: center 
+				flex-flow: column wrap
+				justify-content: center 
+			justify-content: flex-start
+			>.copyright 
+				+rem('font-size', 13px)
+				text-transform: uppercase 
+			>.stamps 
+				align-items: inherit 
+				display: inherit 
+				flex-flow: inherit 
+				justify-content: inherit  
+				padding: 0 15px
+				+mq(812px, max)
+					padding-right: 0
+					+mq(737px, max)
+						flex-flow: row wrap
+						padding-top: 15px
+						padding-left: 0
+						width: 100%
+				>*
+					&:not(:last-child)
+						padding-right: 10px
+					>p  
+						border: 1px white solid 
+						+border(999px)
+						+rem('font-size', 11px)
+						padding: 2px 4px
+						text-transform: uppercase 
+			flex: 1 
+		>.social-networks
+			flex: 0 0 auto 
+			+mq(812px, max)
+				padding-top: 30px
+			>ul 
+				>li 
+					&:hover 
+						color: white
